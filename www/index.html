@@ -35,20 +35,24 @@
             </div>
         </div>
         <script type="text/javascript" src="js/daylight.js"></script>
+        <script type="text/javascript" src="js/daylight.ajax.js"></script>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        
         <script type="text/javascript">
             app.initialize();
             $(window).load(function() {
-	            alert("load");
 	            $(".received").click(function() {
-	            	alert("click");
 		            cordova.plugins.barcodeScanner.scan(
 				      function (result) {
-				          alert("We got a barcode\n" +
-				                "Result: " + result.text + "\n" +
-				                "Format: " + result.format + "\n" +
-				                "Cancelled: " + result.cancelled);
+				      		if(result.cancelled)
+				      			return;
+					      $.ajax("http://10.73.42.193:8080/nyam/app/addHistory", {data:{qrcode:result.text, id:"121001"}}).done(function(value) {
+						      alert("성공" + value);
+					      }).fail(function(request) {
+						      alert("실패" + request.responseText);
+					      });
+					      
 				      }, 
 				      function (error) {
 				          alert("Scanning failed: " + error);
