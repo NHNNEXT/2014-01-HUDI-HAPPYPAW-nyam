@@ -9,7 +9,7 @@
 <body>
 main
 <p class="value"></p>
-
+<button class="qr">QR code</button>
 <button class="logout">log out</button>
 </body>
 <script>
@@ -39,6 +39,44 @@ main
 			});
 			
 			
-		})
+		});
+		//qr코드 옮겨옴. 
+	    $(".qr").click(function() {
+	    	var id = 
+	        cordova.plugins.barcodeScanner.scan(
+		      function (result) {
+		      		if(result.cancelled)
+		      			return;
+			      $.ajax("http://10.73.42.193:8080/nyam/app/addHistory", {data:{qrcode:result.text}, method:"POST"}).done(function(value) {
+				      alert("success " + value);
+			      }).fail(function(request) {
+				      alert("fail " + request.status);
+			      });
+			      
+		      }, 
+		      function (error) {
+		          alert("Scanning failed: " + error);
+		      }
+		   );
+	    });
+
+        $(window).load(function() {
+	        getLoginUser();
+	    });
+	    
+	    //세션 확인. 
+	    var getLoginUser = function(){
+		    $.ajax("http://10.73.42.193:8080/nyam/app/m_getLoginUser", {method:"POST"}).done(function(value){
+		    	if(value === "{}"){
+		    		alert("session expired");
+			    	window.location.replace("login.html");
+		    	} else{
+			    	alert("session exist");
+		    	}	
+		 
+		    }).fail(function(request){
+			    alert("ajax fail " + request.status);
+		    });
+	    }
 </script>
 </html>
