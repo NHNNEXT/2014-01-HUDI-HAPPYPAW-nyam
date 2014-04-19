@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	    <script type="text/javascript" src="js/daylight.js"></script>
+        <script type="text/javascript" src="./js/daylight.ajax.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
+</head>
+<body>
+main
+<p class="value"></p>
+
+<button class="logout">log out</button>
+</body>
+<script>
+
+		$.ajax("http://10.73.42.193:8080/nyam/app/m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
+			//alert("성공" + value);
+			if(!value.length){
+				alert("로그인 하셔");
+				return;//배열이 아니다.
+			}
+			for(var i=0; i< value.length; i++){
+				
+				$(".value").append(value[i].restaurant + "   "+ value[i].regdate);
+				$(".value").append("<br/>");
+			}
+		}).fail(function(request) {
+			alert("실패" + request.status);
+		});
+		
+		//로그아웃 부분 연규 체크 받을 것..
+		$(".logout").click(function(){
+			$.ajax("http://10.73.42.193:8080/nyam/app/m_logout", {method:"POST"}).done(function(value){
+				alert("logout");//이 앞에 alert("auto")가 뜨는데???연규 체크 
+				window.location.replace("login.html");
+			}).fail(function(request){
+				alert("logout fail" + request.status);
+			});
+			
+			
+		})
+</script>
+</html>

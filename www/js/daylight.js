@@ -901,8 +901,8 @@ daylight.fn.extend({
 */
 daylight.fn.extend({
 	before : function(e) {
-		var type = daylight.type(e);//type 검사
-		if(type === "string") {
+		var is_element = daylight.isElement(e);//type 검사
+		if(!is_element) {
 			this.insertHTML("beforebegin", e); 
 			return this;
 		}
@@ -913,8 +913,8 @@ daylight.fn.extend({
 		return this;
 	},
 	prepend : function(e) {
-		var type = daylight.type(e);
-		if(type === "string") {
+		var is_element = daylight.isElement(e);//type 검사
+		if(!is_element) {
 			this.insertHTML("afterbegin", e);
 			return this;
 		}
@@ -924,13 +924,13 @@ daylight.fn.extend({
 		});
 		return this;
 	},
-	append : function(object) {
-		var type = daylight.type(object);
-		if(type === "string") {
-			this.insertHTML("beforeend", object);
+	append : function(e) {
+		var is_element = daylight.isElement(e);//type 검사
+		if(!is_element) {
+			this.insertHTML("beforeend", e);
 			return this;
 		}
-		_domEach(this, object, function(target, element) {
+		_domEach(this, e, function(target, element) {
 			if(daylight.isElement(target))
 				target.appendChild(element);
 		});
@@ -938,12 +938,12 @@ daylight.fn.extend({
 		
 	},
 	after : function(e) {
-		var type = daylight.type(e);
-		if(type === "string") {
+		var is_element = daylight.isElement(e);//type 검사
+		if(!is_element) {
 			this.insertHTML("afterend", e);
 			return this;
 		}
-		_domEach(this, objs, function(target, element) {
+		_domEach(this, e, function(target, element) {
 			if(daylight.isElement(target) && target.parentNode)
 				target.parentNode.insertBefore(element,  target.nextSibling );
 		});

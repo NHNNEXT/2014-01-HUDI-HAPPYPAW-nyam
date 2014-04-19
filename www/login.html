@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	    <script type="text/javascript" src="js/daylight.js"></script>
+        <script type="text/javascript" src="http://daybrush.com/yk/daylightJS/daylight.ajax.js"></script>
+        <script type="text/javascript" src="phonegap.js"></script>
+</head>
+<body>
+	<input type ="text" name="id" placeholder="id"><br>
+	<input type="password" name="password" placeholder="password">
+	<button class="submit">submit</button>
+</body>
+<script>
+	$(".submit").click(function(){
+		var id = $("[name=id]").val();
+		var password = $("[name=password]").val();
+		$.ajax("http://10.73.42.193:8080/nyam/app/m_login_check", {data:{id:id, password:password}, method:"POST"}).done(function(value) {
+			if(value ==="false"){
+				alert("ajax ok, login_fail   " + value);
+				window.location.replace("login.html");
+				return;
+			}
+			alert("ajax ok. login success   "+value);
+			window.location.replace("main.html");
+		}).fail(function(request) {
+			alert("loginfail   " + request.status);
+			 
+		});
+	});
+</script>
+</html>
