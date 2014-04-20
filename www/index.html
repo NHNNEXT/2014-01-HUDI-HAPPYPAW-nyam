@@ -48,7 +48,7 @@
 				      function (result) {
 				      		if(result.cancelled)
 				      			return;
-					      $.ajax("http://10.73.42.193:8080/nyam/app/addHistory", {data:{qrcode:result.text, id:"121001"}, method:"POST"}).done(function(value) {
+					      $.ajax("http://10.73.45.131:8080/nyam/app/addHistory", {data:{qrcode:result.text, id:"121001"}, method:"POST"}).done(function(value) {
 						      alert("성공" + value);
 					      }).fail(function(request) {
 						      alert("실패" + request.status);

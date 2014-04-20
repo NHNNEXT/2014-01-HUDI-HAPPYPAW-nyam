@@ -15,7 +15,7 @@ main
 <script>
 
 		var getJSON = function(){
-			$.ajax("http://10.73.42.193:8080/nyam/app/m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
+			$.ajax("http://10.73.45.131:8080/nyam/app/m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
 				//alert("성공" + value);
 				if(!value.length){
 					alert("로그인 하셔");
@@ -33,7 +33,7 @@ main
 		
 		//로그아웃 부분 연규 체크 받을 것..
 		$(".logout").click(function(){
-			$.ajax("http://10.73.42.193:8080/nyam/app/m_logout", {method:"POST"}).done(function(value){
+			$.ajax("http://10.73.45.131:8080/nyam/app/m_logout", {method:"POST"}).done(function(value){
 				alert("logout");//이 앞에 alert("auto")가 뜨는데???연규 체크 
 				window.location.replace("login.html");
 			}).fail(function(request){
@@ -49,7 +49,7 @@ main
 		      function (result) {
 		      		if(result.cancelled)
 		      			return;
-			      $.ajax("http://10.73.42.193:8080/nyam/app/addHistory", {data:{qrcode:result.text}, method:"POST"}).done(function(value) {
+			      $.ajax("http://10.73.45.131:8080/nyam/app/addHistory", {data:{qrcode:result.text}, method:"POST"}).done(function(value) {
 				      getJSON();
 				      alert("success " + value);
 				      $(".value").html("");
@@ -72,7 +72,7 @@ main
 	    
 	    //세션 확인. 
 	    var getLoginUser = function(){
-		    $.ajax("http://10.73.42.193:8080/nyam/app/m_getLoginUser", {method:"POST"}).done(function(value){
+		    $.ajax("http://10.73.45.131:8080/nyam/app/m_getLoginUser", {method:"POST"}).done(function(value){
 		    	if(value === "{}"){
 		    		alert("session expired");
 			    	window.location.replace("login.html");

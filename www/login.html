@@ -14,7 +14,7 @@
 	$(".submit").click(function(){
 		var id = $("[name=id]").val();
 		var password = $("[name=password]").val();
-		$.ajax("http://10.73.42.193:8080/nyam/app/m_login_check", {data:{id:id, password:password}, method:"POST"}).done(function(value) {
+		$.ajax("http://10.73.45.131:8080/nyam/app/m_login_check", {data:{id:id, password:password}, method:"POST"}).done(function(value) {
 			if(value ==="false"){
 				alert("ajax ok, login_fail   " + value);
 				window.location.replace("login.html");
