@@ -42,7 +42,7 @@ pages.push(function() {
 			day++;
 		});
 		var resize = function() {
-			$(".calendar tr td:first-child").css("height", $(".calendar td").width());
+			$(".calendar td").css("height", $(document.querySelector(".calendar td")).width());
 		};
 		
 		$(window).resize(resize);

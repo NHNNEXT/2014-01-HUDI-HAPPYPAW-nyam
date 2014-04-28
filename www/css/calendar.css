@@ -10,6 +10,7 @@
 }
 .calendar th, .calendar td {
 	vertical-align: middle;
+	height: 100%;
 }
 .calendar th {
 	font-size: 0.8em;
