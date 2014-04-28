@@ -1,0 +1,54 @@
+.calendar {
+	width: 100%;
+	max-width: 800px;
+	margin:50px auto 0px;
+}
+.calendar .wxh {
+	width: 100%;
+	height: auto;
+	height: 50px;
+}
+.calendar th, .calendar td {
+	vertical-align: middle;
+}
+.calendar th {
+	font-size: 0.8em;
+	width: 14.2857%;
+}
+.calendar td {
+	font-weight: 400;
+	text-align: center;
+	color:#444;
+	font-size: 0.8em;
+	height: 40px;
+	border-radius: 50%;
+	position: relative;
+}
+.calendar td .stamps {
+	height: 10px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	bottom: 5%;
+}
+.calendar td .stamps .stamp {
+	display: inline-block;
+	border-radius: 50%;
+	background: #FF7500;
+	width: 6px;
+	height: 6px;
+	margin-right: 1px;
+}
+.calendar td.today span {
+	color:#fff;
+}
+.calendar td.today .stamps .stamp {
+	background: #fff;
+}
+.calendar td.prev, td.next {
+	color:#aaa
+}
+.calendar td.today {
+	background: #FF7500;
+	color:#fff;
+}

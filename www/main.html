@@ -4,6 +4,7 @@
 	<meta charset="utf-8"/>
 	    <script type="text/javascript" src="js/daylight.js"></script>
         <script type="text/javascript" src="./js/daylight.ajax.js"></script>
+        <script type="text/javascript" src="./js/page.js"></script>
         <script type="text/javascript" src="phonegap.js"></script>
 </head>
 <body>
@@ -14,34 +15,6 @@ main
 </body>
 <script>
 
-		var getJSON = function(){
-			$.ajax("http://10.73.45.131:8080/nyam/app/m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
-				//alert("성공" + value);
-				if(!value.length){
-					alert("로그인 하셔");
-					return;//배열이 아니다.
-				}
-				for(var i=0; i< value.length; i++){
-					
-					$(".value").append(value[i].restaurant + "   "+ value[i].regdate);
-					$(".value").append("<br/>");
-				}
-			}).fail(function(request) {
-				alert("실패" + request.status);
-			});
-		}
-		
-		//로그아웃 부분 연규 체크 받을 것..
-		$(".logout").click(function(){
-			$.ajax("http://10.73.45.131:8080/nyam/app/m_logout", {method:"POST"}).done(function(value){
-				alert("logout");//이 앞에 alert("auto")가 뜨는데???연규 체크 
-				window.location.replace("login.html");
-			}).fail(function(request){
-				alert("logout fail" + request.status);
-			});
-			
-			
-		});
 		//qr코드 옮겨옴. 
 	    $(".qr").click(function() {
 	    	var id = 
@@ -65,24 +38,11 @@ main
 		   );
 	    });
 
-        $(window).load(function() {
-	        getLoginUser();
+        $(document).ready(function() {
+	        checkLogin();
 	        getJSON();
 	    });
 	    
 	    //세션 확인. 
-	    var getLoginUser = function(){
-		    $.ajax("http://10.73.45.131:8080/nyam/app/m_getLoginUser", {method:"POST"}).done(function(value){
-		    	if(value === "{}"){
-		    		alert("session expired");
-			    	window.location.replace("login.html");
-		    	} else{
-			    	alert("session exist");
-		    	}	
-		 
-		    }).fail(function(request){
-			    alert("ajax fail " + request.status);
-		    });
-	    }
 </script>
 </html>
