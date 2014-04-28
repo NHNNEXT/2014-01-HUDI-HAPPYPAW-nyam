@@ -42,7 +42,8 @@ pages.push(function() {
 			day++;
 		});
 		var resize = function() {
-			$(".calendar td").css("height", $(document.querySelector(".calendar td")).width());
+			var width = $(document.querySelector(".calendar td")).width();
+			$(".calendar td").css("height", width+"px");
 		};
 		
 		$(window).resize(resize);

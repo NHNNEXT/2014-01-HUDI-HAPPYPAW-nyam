@@ -24,13 +24,14 @@
 	height: 40px;
 	border-radius: 50%;
 	position: relative;
+	margin:5px 0px;
 }
 .calendar td .stamps {
 	height: 10px;
 	position: absolute;
 	text-align: center;
 	width: 100%;
-	bottom: 5%;
+	bottom: 10%;
 }
 .calendar td .stamps .stamp {
 	display: inline-block;

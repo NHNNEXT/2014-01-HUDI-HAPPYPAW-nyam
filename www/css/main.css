@@ -15,6 +15,9 @@ body {
 	-webkit-transition:all ease 0.5s;
 	padding-top:64px;
 }
+.content {
+	outline:none;
+}
 .navigation-bar {
 	height: 64px;
 	width: 100%;

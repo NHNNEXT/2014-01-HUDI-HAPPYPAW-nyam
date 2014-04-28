@@ -5,7 +5,7 @@ var checkLogin = function(){
     	if(!value || value === "{}"){
     		if(location.href.search("login") <= 0) {
     		    alert("로그인을 해주세요.");
-		    	//window.location.replace("login.html");
+		    	window.location.replace("login.html");
 		    }
     	} else{
     		
