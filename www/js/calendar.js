@@ -21,7 +21,7 @@ pages.push(function() {
 			for(var i=0; i< value.length; i++){
 				var regdate = value[i].regdate;
 				var day = parseInt(regdate.substring(8,10));
-				$(tds.get(startWeek + day)).append('<div class="stamp"></div>');
+				$(tds.get(startWeek + day - 1)).append('<div class="stamp"></div>');
 				console.log(day);
 			}
 		}).fail(function(request) {

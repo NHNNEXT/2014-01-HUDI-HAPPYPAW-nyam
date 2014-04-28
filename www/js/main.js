@@ -1,9 +1,5 @@
 pages.push(function() {
 	$(document).ready(function() {
-		$(".menu").click(function() {
-			$(".wrapper").toggleClass("open-menu");
-		});
-		$(".logout").click(logout);
 		$(".takeQR").click(function() {
 			console.log("qrcode click");
 			cordova.plugins.barcodeScanner.scan(
@@ -27,4 +23,13 @@ pages.push(function() {
 		$(".profile .name").html(user.name);
 		$(".profile .id").html(user.id);
 	});
+});
+$(document).ready(function() {
+	$(".menu").click(function() {
+		$(".wrapper").toggleClass("open-menu");
+	});
+	$(".contents").click(function() {
+		$(".wrapper").removeClass("open-menu");
+	});
+	$(".logout").click(logout);
 });

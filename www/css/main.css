@@ -97,3 +97,9 @@ body {
 	-webkit-transform: translateX(250px);
 	position: fixed;
 }
+.wrapper.open-menu .sliding-menu {
+	position: absolute;
+}
+.wrapper.open-menu .navigation-bar {
+	position: absolute;
+}
