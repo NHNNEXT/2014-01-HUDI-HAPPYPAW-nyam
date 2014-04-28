@@ -14,6 +14,9 @@ main
 </body>
 <script>
 
+//daylight ajax좋아보이네~
+
+//IP:PORT 모두 다 로직에서 분리하기.
 		var getJSON = function(){
 			$.ajax("http://10.73.45.131:8080/nyam/app/m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
 				//alert("성공" + value);
@@ -21,6 +24,7 @@ main
 					alert("로그인 하셔");
 					return;//배열이 아니다.
 				}
+				//javascript length는 미리 변수에 담아두고 그걸 쓰기. 안그러면 매번 연산함.
 				for(var i=0; i< value.length; i++){
 					
 					$(".value").append(value[i].restaurant + "   "+ value[i].regdate);
@@ -34,6 +38,7 @@ main
 		//로그아웃 부분 연규 체크 받을 것..
 		$(".logout").click(function(){
 			$.ajax("http://10.73.45.131:8080/nyam/app/m_logout", {method:"POST"}).done(function(value){
+				//설마 alert이 원래 최종 기능임? 나중에 dialog layer로 뜨게 하는 건 어떨까? 
 				alert("logout");//이 앞에 alert("auto")가 뜨는데???연규 체크 
 				window.location.replace("login.html");
 			}).fail(function(request){
@@ -47,7 +52,7 @@ main
 	    	var id = 
 	        cordova.plugins.barcodeScanner.scan(
 		      function (result) {
-		      		if(result.cancelled)
+		      		if(result.cancelled) //cancelled 라는 이름 좋다. 
 		      			return;
 			      $.ajax("http://10.73.45.131:8080/nyam/app/addHistory", {data:{qrcode:result.text}, method:"POST"}).done(function(value) {
 				      getJSON();

@@ -42,12 +42,15 @@
         
         <script type="text/javascript">
             app.initialize();
+            //callback이 중첩되어 있다면 함수를 분리해서 선언해두고 , 그 선언된 함수를 콜해서 사용하기 
+            //아래는 분리해도 될 만한 수준의 중첩이라고 보이는데.
             $(window).load(function() {
 	            $(".received").click(function() {
 		            cordova.plugins.barcodeScanner.scan(
 				      function (result) {
 				      		if(result.cancelled)
 				      			return;
+                            //URL과 같은 데이터는 로직과 분리해두기. 121001 이라는 id 값도 로직에서 분리해서 상수로 선언해두던가..
 					      $.ajax("http://10.73.45.131:8080/nyam/app/addHistory", {data:{qrcode:result.text, id:"121001"}, method:"POST"}).done(function(value) {
 						      alert("성공" + value);
 					      }).fail(function(request) {

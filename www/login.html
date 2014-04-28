@@ -11,10 +11,12 @@
 	<button class="submit">submit</button>
 </body>
 <script>
+//근데 이거 password 평문으로 날라다니는 거임?
 	$(".submit").click(function(){
 		var id = $("[name=id]").val();
 		var password = $("[name=password]").val();
 		$.ajax("http://10.73.45.131:8080/nyam/app/m_login_check", {data:{id:id, password:password}, method:"POST"}).done(function(value) {
+			//false 문자열은 의도적인건가?? daylight에서 그렇게 구현된거라면 ..문제임. 그냥 false면 false지 문자열 false는 자바스크립트 타입을 잘 모르고 구현한 거임.
 			if(value ==="false"){
 				alert("ajax ok, login_fail   " + value);
 				window.location.replace("login.html");
