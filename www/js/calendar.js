@@ -12,8 +12,12 @@ pages.push(function() {
 	var getStamps = function(){
 	
 		$.ajax("http://10.73.45.131:8080/nyam/app/m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
-			//alert("성공" + value);
-			if(!value.length && value.constructor !== Array){
+			if(value.hasOwnProperty("code")) {
+				switch(value.code) {
+				case 500:
+				}
+			}
+			if(!value.hasOwnProperty("length") || value.constructor !== Array){
 				alert("실패");
 				return;//배열이 아니다.
 			}
@@ -22,7 +26,7 @@ pages.push(function() {
 				var regdate = value[i].regdate;
 				var day = parseInt(regdate.substring(8,10));
 				$(tds.get(startWeek + day - 1)).append('<div class="stamp"></div>');
-				console.log(day);
+				//console.log(day);
 			}
 		}).fail(function(request) {
 			alert("실패" + request.status);
