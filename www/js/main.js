@@ -1,7 +1,6 @@
 pages.push(function() {
 	$(document).ready(function() {
 		$(".takeQR").click(function() {
-			console.log("qrcode click");
 			cordova.plugins.barcodeScanner.scan(
 			function (result) {
 				if(result.cancelled)

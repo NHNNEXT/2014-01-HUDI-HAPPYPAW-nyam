@@ -43,6 +43,7 @@ body {
 	cursor: pointer;
 	color:#fff;
 	line-height: 30px;
+	font-size:13px;
 }
 .menu .menu-line {
 	display: block;

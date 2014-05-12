@@ -6,20 +6,26 @@ function logout() {
 		alert("logout fail" + request.status);
 	});
 };
+
+
 function loginCheck(id, password) {
-	$.ajax("http://10.73.45.131:8080/nyam/app/m_login_check", {data:{id:id, password:password}, method:"POST", type:"json"}).done(function(value) {
+	$.ajax("http://10.73.45.131:8080/nyam/app/m_login_check", {data:{id:id, password:password}, method:"POST", type:"json"}).done(function(value, req) {
 		if(value.hasOwnProperty("code")){
+			var code = parseInt(value.code);
 			switch(code) {
 			case 200://성공
 				window.location.replace("index.html");
 				return;
-			case 300://없는 아이디입니다.
-				alert("존재하지 않는 회원이거나 패스워드가 일치하지 않습니다..");
+			case 300://없는 아이디, 패스워드 일치 X
+				alert(value.message);
 				return;
 			}
+			console.log(value);
+			console.log(req.responseText);
 			alert("ajax ok, login_fail   " + value);
 			return;
 		}
+		console.log(value);
 		alert("login fail");
 		
 	}).fail(function(request) {

@@ -14,7 +14,7 @@ pages.push(function() {
 		$.ajax("http://10.73.45.131:8080/nyam/app/m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
 			if(value.hasOwnProperty("code")) {
 				switch(value.code) {
-				case 500:
+				case "500":
 				}
 			}
 			if(!value.hasOwnProperty("length") || value.constructor !== Array){
