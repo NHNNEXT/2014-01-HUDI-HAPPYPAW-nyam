@@ -15,8 +15,19 @@ body {
 	-webkit-transition:all ease 0.5s;
 	padding-top:64px;
 }
-.content {
+.contents, .content {
 	outline:none;
+}
+.contents {
+	width: 100%;
+	max-width: 800px;
+	margin:50px auto 0px;
+	visibility: hidden;
+	padding:0px 10px;
+	box-sizing: border-box;
+}
+.contents.show {
+	visibility: visible;
 }
 .navigation-bar {
 	height: 64px;
@@ -34,6 +45,10 @@ body {
 	height: 30px;
 	bottom:12px;
 }
+.navigation-item.hidden {
+	display: none;
+}
+
 .navigation-item.left {
 	left: 14px;
 	cursor: pointer;
@@ -50,6 +65,13 @@ body {
 	height: 2px;
 	border-radius: 4px;
 	background: #fff;
+}
+
+.navigation-item.back img {
+	height: 100%;
+}
+.takeQR img{
+	width: 100%;
 }
 .navigation-title {
 	display: block;

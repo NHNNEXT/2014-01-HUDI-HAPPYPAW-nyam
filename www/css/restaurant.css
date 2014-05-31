@@ -1,0 +1,47 @@
+.contents {
+	margin-top: 20px;
+}
+.restaurant {
+	margin-top: 20px;	
+}
+
+.restaurant .restaurant-list {
+	width: 100%;
+}
+.restaurant .restaurant-list .num{
+	width: 20%;
+	max-width: 80px;
+	text-align: center;
+}
+.restaurant .restaurant-list .location{
+	width: 30%;
+	max-width: 100px;
+
+}
+.restaurant-list .location a {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.restaurant .restaurant-list th {
+	text-align: left;
+}
+.restaurant .restaurant-list th, .restaurant .restaurant-list td {
+	padding:0px 10px;
+	vertical-align: middle;
+	height: 40px;
+}
+.restaurant .restaurant-list td {
+	height: 60px;
+}
+.restaurant .restaurant-list td a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 60px;
+}
+.restaurant .restaurant-list tr:nth-child(2n + 1) td{
+	height: 40px;
+	background: #F4F4F4;
+
+}

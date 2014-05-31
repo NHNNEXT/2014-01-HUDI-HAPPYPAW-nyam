@@ -9,116 +9,82 @@
 	<link href="./css/main.css" rel="stylesheet"/>
 	<link href="./css/calendar.css" rel="stylesheet"/>
 	<script type="text/javascript" src="cordova.js"></script>
-<!-- 	<script type="text/javascript" src="phonegap.js"></script> -->
-	
-	<script type="text/javascript" src="./js/daylight.js"></script>
-	<script type="text/javascript" src="./js/daylight.ajax.js"></script>
-	
+	<script type="text/javascript" src="./lib/daylight.js"></script>
+	<script type="text/javascript" src="./lib/daylight.ajax.js"></script>
+
+	<script type="text/javascript" src="./js/page.js"></script>	
 	<script type="text/javascript" src="./js/login.js"></script>
-	<script type="text/javascript" src="./js/page.js"></script>
-	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/layout.js"></script>
 	<script type="text/javascript" src="./js/calendar.js"></script>
 </head>
 <body>
-<div class="wrapper">
-	<aside class="sliding-menu">
-		<div class="profile">
-			<div class="name">최연규</div>
-			<div class="id">131082</div>
-		</div>
-		
-		<ul class="main-menu">
-			<li><a href="#">메뉴1</a></li>
-			<li><a href="#">메뉴2</a></li>
-			<li><a href="#">메뉴2</a></li>
-			<li><a href="#">메뉴3</a></li>
-		</ul>
-		<ul class="main-menu setting-menu">
-			<li><a href="#" class="logout">로그아웃</a></li>
-		</ul>
-	</aside>
-	<div class="container">
-		<nav class="navigation-bar">
-			<span class="navigation-item menu left">
-				<span class="menu-line"></span>
-				<span class="menu-line"></span>
-				<span class="menu-line"></span>
-			</span>
-			<span class="navigation-item right takeQR">
-				도장
-			</span>
-			<span class="navigation-title">냠냠
-			</span>
-		</nav>
-		<div class="contents">
-			<table class="calendar" align="center">
-			<tr>
-				<th>SUN</th>
-				<th>MON</th>
-				<th>TUE</th>
-				<th>WED</th>
-				<th>THU</th>
-				<th>FRI</th>
-				<th>SAT</th>
-			</tr>
-			<tr>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-			</tr>
-			<tr>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-			</tr>
-			<tr>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-			</tr>
-			<tr>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-			</tr>
-			<tr>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-			</tr>
-			<tr>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-				<td><span></span><div class="stamps"></div></td>
-			</tr>			
-			</table>
-			
-		</div>
-	</div>
+<div class="contents">
+	<table class="calendar" align="center">
+	<tr>
+		<th>SUN</th>
+		<th>MON</th>
+		<th>TUE</th>
+		<th>WED</th>
+		<th>THU</th>
+		<th>FRI</th>
+		<th>SAT</th>
+	</tr>
+	<tr>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+	</tr>
+	<tr>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+	</tr>
+	<tr>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+	</tr>
+	<tr>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+	</tr>
+	<tr>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+	</tr>
+	<tr>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+		<td><span></span><div class="stamps"></div></td>
+	</tr>			
+	</table>
+	
 </div>
 </body>
 </html>

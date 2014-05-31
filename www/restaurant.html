@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta name="format-detection" content="telephone=no" />
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+	<meta charset="utf-8"/>
+	
+	<link href="./css/reset.css" rel="stylesheet"/>
+	<link href="./css/main.css" rel="stylesheet"/>
+	<link href="./css/restaurant.css" rel="stylesheet"/>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="./lib/daylight.js"></script>
+	<script type="text/javascript" src="./lib/daylight.ajax.js"></script>
+
+	<script type="text/javascript" src="./js/restaurant.js"></script>
+	<script type="text/javascript" src="./js/layout.js"></script>	
+	<script type="text/javascript" src="./js/fakePage.js"></script>	
+	<script type="text/javascript" src="./js/login.js"></script>
+
+</head>
+<body>
+<div class="contents restaurant">
+	<table class="restaurant-list" align="center">
+	<thead>
+	<tr>
+		<th class="num">번호</th>
+		<th class="name">이름</th>
+		<th class="location">주소</th>		
+	</tr>
+	</thead>
+	<tbody>
+	<tr data-num="{writingNo}">
+		<td class="num"><a href="restaurant.view.html#{no}">{num}</a></td>
+		<td><a href="restaurant.view.html#{no}">{name}</a></td>
+		<td class="location"><a href="restaurant.view.html#{no}">{location}</a></td>
+	</tr>
+	</tbody>
+	</table>
+	
+</div>
+</body>
+</html>
