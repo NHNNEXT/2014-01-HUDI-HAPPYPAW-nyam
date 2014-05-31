@@ -1,0 +1,39 @@
+.content .viewBox {
+
+	width: 100%;
+	max-width:800px;
+	border: 1px solid black;
+	margin: 0px auto;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+.info {
+	border:1px solid black;
+	margin: 10px;
+	padding: 10px;
+}
+
+.title{
+	border: 1px solid red;
+
+	margin-bottom: 5px;
+}
+
+
+.etc{
+
+	border:1px solid red;
+
+	display: inline-block;
+}
+
+.contents{
+	border: 1px solid black;
+	margin: 10px;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	padding: 10px;
+}

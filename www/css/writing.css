@@ -1,0 +1,21 @@
+.writingBox{
+	width:100%;
+	max-width: 800px;
+	border:1px solid black;
+	margin:0px auto;
+	text-align: center;
+}
+
+input[type="text"]{
+	width: 95%;
+}
+
+textarea.contentWriting{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	width: 95%;
+	border: 1px solid black;
+	resize:none;
+	height: 500px;
+}
