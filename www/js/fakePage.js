@@ -12,16 +12,20 @@ var initLayout = function() {
 		$(".contents").addClass("show");
 		$(document).on("loadLayout");
 	}
+	console.debug("initLayout");
     $.ajax("./layout.html", {method:"GET"}).done(function(value){
+		console.log("download layout");
 		_initLayout(value);	
     }).fail(function(request){
 		if(request.status === 0) {
-		_initLayout(request.responseText);
+			if(!request.responseText)
+				return;
+			
+			console.log("download layout");
+			_initLayout(request.responseText);
 		}
     });
-
 }
-
 var checkLogin = function(){
 	user.id = "fakeId";
 	user.name = "fakeName";
