@@ -76,9 +76,7 @@ var _ajaxFunc = {
 					ajax._always(request);
 				}
 			};
-			if(ajax.option.aync)
-				request.timeout = 5000;
-			
+			request.timeout = 5000;
 			request.ontimeout = function() {
 				ajax._timeout(request);
 			}
@@ -297,4 +295,5 @@ daylight.ajax.prototype.extend({
 		this.url += prefix + callback;
 	}
 });
+
 

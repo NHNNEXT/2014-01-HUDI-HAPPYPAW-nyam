@@ -1,67 +1,42 @@
 <!DOCTYPE html>
-<meta name="format-detection" content="telephone=no" />
 <html>
+<meta name="format-detection" content="telephone=no" />
 <head>
+
 	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
 	<meta charset="utf-8"/>
 	
 	<link href="./css/reset.css" rel="stylesheet"/>
 	<link href="./css/main.css" rel="stylesheet"/>
 	<link href="./css/boardList.css" rel="stylesheet"/>
-		<link href="./css/boardView.css" rel="stylesheet"/>
-<!-- 	<script type="text/javascript" src="phonegap.js"></script> -->
-<!-- 	<script type="text/javascript" src="phonegap.js"></script> -->
-	
-	<script type="text/javascript" src="./js/daylight.js"></script>
-	<script type="text/javascript" src="./js/daylight.ajax.js"></script>
-	
-	<script type="text/javascript" src="./js/login.js"></script>
-	<script type="text/javascript" src="./js/page.js"></script>
-	<script type="text/javascript" src="./js/main.js"></script>
+<script>
+location.hash = "#50";
+</script>
+<!-- 	<script type="text/javascript" src="cordova.js"></script>	 -->
+	<script type="text/javascript" src="./lib/daylight.js"></script>
+	<script type="text/javascript" src="./lib/daylight.ajax.js"></script>
 
+
+	<script type="text/javascript" src="./js/layout.js"></script>	
+	<script type="text/javascript" src="./js/fakePage.js"></script>	
+	<script type="text/javascript" src="./js/login.js"></script>
+	<script type="text/javascript" src="./js/boardView.js"></script>
+	
 </head>
 <body>
-	<aside class="hidden">
-		<a href = "http://10.73.45.131/"><div class="slide-menu"><p>Main</p></div></a>
-		<a href = ""><div class="slide-menu"><p>나의 식사순위</p></div></a>
-		<a href = ""><div class="slide-menu"><p>지정식당 신청 게시판</p></div></a>
-		<a href = ""><div class="slide-menu"><p>로그아웃</p></div></a>		
-	</aside>
-	<div class="view">
-		<div id="banner">
-			<div id = "menu">
-				<span class="menu-line"></span>
-				<span class="menu-line"></span>
-				<span class="menu-line"></span>
+<div class="contents">
+	<div class="box">
+		<div class="table">
+			<div class="box1"><!--글 하나단위의 박스 js에서 하나씩 있을 떄마다 늘려서 반복해서 넣는다. -->
+				<p class="title">{title}</p><br/>
+				<span class="writer">{userid}</span>
+				<span class="date">{date}</span>
+				<span class="recommend">{recommend}</span>
+				<span class="not_recommend">{notRecommend}</span>									
 			</div>
-			냠냠
-			<div id = "qr">
-				도장
-			</div>
+				<span class="content">{content}</span>
 		</div>
-
-		<section class="content">
-			<div class="viewBox">
-				<div class="info">
-					<div class="title">
-					jdsklfjklsdfjkdsljfklsdjfklsdjfk
-					</div>
-					<div class="etc">
-						<span class="writer">글쓴이: ekd</span>
-						<span class="recommend">추천: 1</span>
-						<span class="not_recommend">비추천: 12</span>
-					</div>
-				</div>
-				<div class="photo">
-				</div>
-				<div class="contents">
-				jkljkljk
-				jkljkljkl
-				jkljklj
-				</div>
-			</div>
-		</section>
 	</div>
-	<script type="text/javascript" src="./js/slide.js"></script>
+</div>
 </body>
 </html>

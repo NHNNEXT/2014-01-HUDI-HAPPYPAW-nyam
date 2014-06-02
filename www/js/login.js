@@ -1,5 +1,5 @@
 function logout() {
-	$.ajax("http://10.73.45.131:8080/nyam/app/m_logout", {method:"POST"}).done(function(value){
+	daylight.ajax("http://10.73.45.131:8080/nyam/app/m_logout", {method:"POST"}).done(function(value){
 		alert("로그아웃되었습니다.");
 		window.location.replace("login.html");
 	}).fail(function(request){
@@ -11,7 +11,9 @@ function logout() {
 function loginCheck(id, password) {
 	$.ajax("http://10.73.45.131:8080/nyam/app/m_login_check", {data:{id:id, password:password}, method:"POST", type:"json"}).done(function(value, req) {
 		if(value.hasOwnProperty("code")){
-			var code = parseInt(value.code);
+
+			var code = parseFloat(value.code);
+
 			switch(code) {
 			case 200://성공
 				window.location.replace("index.html");
@@ -19,6 +21,7 @@ function loginCheck(id, password) {
 			case 300://없는 아이디, 패스워드 일치 X
 				alert(value.message);
 				return;
+			
 			}
 			console.log(value);
 			console.log(req.responseText);

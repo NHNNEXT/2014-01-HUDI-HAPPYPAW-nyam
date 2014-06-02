@@ -1,0 +1,9 @@
+.contents form input {
+	width: 100%;
+	box-sizing: border-box;
+}
+.contents form textarea {
+	width: 100%;
+	height: 400px;
+	box-sizing: border-box;
+}

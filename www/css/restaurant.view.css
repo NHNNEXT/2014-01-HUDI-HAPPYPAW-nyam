@@ -1,0 +1,24 @@
+.contents {
+	margin-top: 10px;
+}
+.restaurant-view {
+	
+}
+.restaurant-view .image{
+	text-align: center;
+}
+.restaurant-view .image img {
+	width: 100%;
+}
+.restaurant-view h1 {
+	margin:10px 0px;
+	font-weight: 400;
+	font-size: 3em;
+}
+.description {
+	margin:10px 0px;
+	font-size: 1.1em;
+}
+.location {
+	margin:10px 0px;
+}

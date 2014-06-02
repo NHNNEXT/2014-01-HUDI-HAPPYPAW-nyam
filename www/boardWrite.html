@@ -8,7 +8,7 @@
 	
 	<link href="./css/reset.css" rel="stylesheet"/>
 	<link href="./css/main.css" rel="stylesheet"/>
-	<link href="./css/boardList.css" rel="stylesheet"/>
+	<link href="./css/boardWrite.css" rel="stylesheet"/>
 
 <!-- 	<script type="text/javascript" src="cordova.js"></script>	 -->
 	<script type="text/javascript" src="./lib/daylight.js"></script>
@@ -18,31 +18,16 @@
 	<script type="text/javascript" src="./js/layout.js"></script>	
 	<script type="text/javascript" src="./js/fakePage.js"></script>	
 	<script type="text/javascript" src="./js/login.js"></script>
-	<script type="text/javascript" src="./js/boardList.js"></script>
-
+	<script type="text/javascript" src="./js/boardWrite.js"></script>
+	
 </head>
 <body>
 <div class="contents">
-	<div class="box">
-		<a href="boardWrite.html">글쓰기</a>
-		<div class="table">
-			<div class="box1"><!--글 하나단위의 박스 js에서 하나씩 있을 떄마다 늘려서 반복해서 넣는다. -->
-				<p class="title"><a href="boardView.html#{no}">{title}</a></p><br/>
-				<span class="writer">{userId}</span>
-				<span class="date">{date}</span>
-				<span class="recommend">{recommend}</span>
-				<span class="not_recommend">{notRecommend}</span>
-									
-			</div>
-		</div>
-		<div class="list">
-			<div class="leftArrow arrow">
-			</div>
-			<span class="listNum">페이지 수 </span>
-			<div class="rightArrow arrow">
-			</div>
-		</div>
-	</div>
+<form action="#">
+	<p><input type="text" name="title" placeholder="Title"></p>
+	<p><textarea name="content" placeholder="Content"></textarea></p>
+	<button class="submit">Submit</button>
+</form>
 </div>
 </body>
 </html>
