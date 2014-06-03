@@ -4,6 +4,10 @@
 		var elSliding = document.querySelector(".hidden");
 		
 
+		//아래는 daylight를 사용하면 더 깔끔해질 코드로 보임.
+		//0, 250px 등이런 값들을 하드코딩(소스코드에 직접 적어두는)한다는 것은 이 폭이 변경되는 일이 생기면 동작하지 않는 코드라는 것을 의미함. 따라서 좋지 않음.
+		//전역변수 싹 없애도록.
+
 		 
 		/*좌측 슬라이딩 메뉴 버튼. */
 		menu.addEventListener("click", function(e){

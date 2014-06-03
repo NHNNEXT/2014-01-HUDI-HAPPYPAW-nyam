@@ -1,6 +1,7 @@
 input {
 	border-radius: 0px;
 }
+/*속성선택자 좋네그려. */
 input[name ="id"] {
 	
 	width: 200px;

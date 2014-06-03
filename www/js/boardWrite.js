@@ -4,6 +4,7 @@ $(document).on("loadLayout", function() {
 	
 	console.log("LOAD REQUEST BOARD WRITE");
 	
+	//혹시 toggleClass도 만들었나?
 	$(".navigation-item.back").removeClass("hidden");
 	$(".navigation-item.menu").addClass("hidden");
 	$(".navigation-item.back").click(function() {
@@ -18,7 +19,7 @@ $(document).on("loadLayout", function() {
 				alert("실패");
 				return;
 			}
-			var code = parseFloat(value.code);
+			var code = parseFloat(value.code); //parseInt가 아니고 Float인 이유는?
 			
 			switch(code) {
 			case 200:
