@@ -9,9 +9,7 @@
 	<link href="./css/reset.css" rel="stylesheet"/>
 	<link href="./css/main.css" rel="stylesheet"/>
 	<link href="./css/boardList.css" rel="stylesheet"/>
-<script>
-location.hash = "#50";
-</script>
+	<link href="./css/boardView.css" rel="stylesheet"/>
 <!-- 	<script type="text/javascript" src="cordova.js"></script>	 -->
 	<script type="text/javascript" src="./lib/daylight.js"></script>
 	<script type="text/javascript" src="./lib/daylight.ajax.js"></script>
@@ -31,8 +29,10 @@ location.hash = "#50";
 				<p class="title">{title}</p><br/>
 				<span class="writer">{userid}</span>
 				<span class="date">{date}</span>
-				<span class="recommend">{recommend}</span>
-				<span class="not_recommend">{notRecommend}</span>									
+			</div>
+			<div class="box2">
+				<span class="recommend">Like : {recommend}</span>
+				<span class="not_recommend">&nbsp;&nbsp;&nbsp;Dislike : {notRecommend}</span>									
 			</div>
 				<span class="content">{content}</span>
 		</div>
