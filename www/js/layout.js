@@ -6,7 +6,7 @@ $(document).on("loadLayout", function() {
 		function (result) {
 			if(result.cancelled)
 				return;
-			$.ajax("http://10.73.45.131:8080/nyam/app/addHistory", {data:{qrcode:result.text}, method:"POST"}).done(function(value) {
+			$.ajax(pageInfo.domain+"addHistory", {data:{qrcode:result.text}, method:"POST"}).done(function(value) {
 				location.replace(location.href);
 				alert("등록되었습니다.");
 	

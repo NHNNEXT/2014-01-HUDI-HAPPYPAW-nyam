@@ -13,15 +13,13 @@ var initLayout = function() {
 		$(document).on("loadLayout");
 	}
 	console.debug("initLayout");
-    $.ajax("./layout.html", {method:"GET"}).done(function(value){
+    $.ajax("./layout.html", {method:"GET"}).done(function(value, req){
 		console.log("download layout");
-		_initLayout(value);	
+		_initLayout(req.responseText);	
     }).fail(function(request){
 		if(request.status === 0) {
 			if(!request.responseText)
 				return;
-			
-			console.log("download layout");
 			_initLayout(request.responseText);
 		}
     });

@@ -1,5 +1,5 @@
 var pageInfo = {
-	domain : "http://10.73.45.131:8080/nyam/"
+	domain : "http://125.209.200.26:80/nyam/"
 }
 var user = {id:"22", name:"11"};
 var initLayout = function() {
@@ -12,9 +12,9 @@ var initLayout = function() {
 		$(document).on("loadLayout");
 	}
 	console.debug("initLayout");
-    $.ajax("./layout.html", {method:"GET"}).done(function(value){
+    $.ajax("./layout.html", {method:"GET"}).done(function(value, req){
 		console.log("download layout");
-		_initLayout(value);	
+		_initLayout(req.responseText);	
     }).fail(function(request){
 		if(request.status === 0) {
 			if(!request.responseText)
@@ -27,6 +27,7 @@ var initLayout = function() {
 
 var checkLogin = function(){
     $.ajax(pageInfo.domain + "m_getLoginUser", {method:"POST", type:"json"}).done(function(value){
+    	//alert("login after" +  value.id+"     " + location.href);
     	if(value.hasOwnProperty("code") || !value.hasOwnProperty("id") ){
     		if(location.href.indexOf("login") <= 0) {
     		    alert("로그인을 해주세요.");
@@ -49,3 +50,4 @@ var checkLogin = function(){
     });
 }
 checkLogin();
+

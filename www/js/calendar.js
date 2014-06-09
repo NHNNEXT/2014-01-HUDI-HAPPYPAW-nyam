@@ -1,3 +1,4 @@
+
 $(document).on("loginComplete", function() {	
 	var todate = new Date();
 	var date = new Date(todate.getFullYear(), todate.getMonth(), 1);
@@ -7,10 +8,10 @@ $(document).on("loginComplete", function() {
 	var today = todate.getDate();
 	var lastDay = lastDate.getDate();
 	var day = 1;
-	
+	var tds = $(".calendar td");
 	var getStamps = function(){
 	
-		$.ajax("http://10.73.45.131:8080/nyam/m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
+		$.ajax(pageInfo.domain + "m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
 			if(value.hasOwnProperty("code")) {
 				switch(value.code) {
 				case "500":
@@ -20,11 +21,10 @@ $(document).on("loginComplete", function() {
 				alert("실패: Not Array");
 				return;//배열이 아니다.
 			}
-			var tds = $(".calendar td .stamps");
 			for(var i=0; i< value.length; i++){
 				var regdate = value[i].regdate;
-				var day = parseInt(regdate.substring(8,10));
-				$(tds.get(startWeek + day - 1)).append('<div class="stamp"></div>');
+				var day = regdate.substring(8,10);
+				$(tds.get(startWeek + day - 1)).find(".stamps").append('<div class="stamp"></div>');
 				//console.log(day);
 			}
 		}).fail(function(request) {
@@ -32,7 +32,7 @@ $(document).on("loginComplete", function() {
 		});
 	}
 	
-	$(".calendar td").each(function(td, index) {
+	tds.each(function(td, index) {
 		if(index < startWeek)
 			return;
 		if(day > lastDay)
