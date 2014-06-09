@@ -88,6 +88,7 @@
 	-moz-box-sizing:border-box;
 	-webkit-box-sizing:border-box;
 	margin: 0px auto;
+	clear: both;
 }
 
 .table .box1{
@@ -138,4 +139,9 @@ div.arrow, span.listNum {
 
 a.write{
 	background: #e3e3e3;
+	padding:10px 20px;
+	margin:10px 0px;
+	display: inline-block;
+	float: right;
+	overflow: hidden;
 }
