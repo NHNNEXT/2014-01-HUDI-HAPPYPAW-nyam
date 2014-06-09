@@ -15,6 +15,7 @@ $(document).on("loadLayout", function() {
 		var data = {title:$('[name="title"]').val(), content:$('[name="content"]').val()};
 		$.ajax(pageInfo.domain + "m/requestBoard/write", {data:data, method:"POST", type:"json"}).done(function(value) {
 			if(!value.hasOwnProperty("code")) {
+
 				alert("실패");
 				return;
 			}

@@ -1,6 +1,6 @@
 
 var pageInfo = {
-	domain : "http://10.73.45.131:8080/nyam/"
+	domain : "http://125.209.200.26:80/nyam/"
 }
 var user = {id:"22", name:"11"};
 var initLayout = function() {
