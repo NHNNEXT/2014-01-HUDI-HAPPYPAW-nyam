@@ -13,8 +13,12 @@ $(document).on("loginComplete", function() {
 	
 		$.ajax(pageInfo.domain + "m_nyamHistory", {method:"POST" , type: "json"}).done(function(value) {
 			if(value.hasOwnProperty("code")) {
+				value.code = parseFloat(value.code);
 				switch(value.code) {
-				case "500":
+				case 500:
+					alert("로그인을 해주세요.");
+					window.location.replace("login.html");
+					return;
 				}
 			}
 			if(!value.hasOwnProperty("length") || value.constructor !== Array){
