@@ -123,8 +123,8 @@ body {
 }
 
 .wrapper.open-menu {
-	left: 250px;
-	1-webkit-transform: translateX(250px);
+	1left: 250px;
+	-webkit-transform: translateX(250px);
 	position: absolute;
 }
 .wrapper.open-menu .sliding-menu {
