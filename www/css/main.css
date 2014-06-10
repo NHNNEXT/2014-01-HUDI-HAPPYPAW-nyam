@@ -5,7 +5,10 @@ body {
 }
 .wrapper {
 /* 	position: fixed; */
+	position: relative;
+	left:0px;
 	width: 100%;
+	transition:all ease 0.5s;
 	-webkit-transition:all ease 0.5s;
 	height: 100%;
 	box-sizing: border-box;
@@ -120,11 +123,13 @@ body {
 }
 
 .wrapper.open-menu {
-	-webkit-transform: translateX(250px);
-	position: fixed;
+	left: 250px;
+	1-webkit-transform: translateX(250px);
+	position: absolute;
 }
 .wrapper.open-menu .sliding-menu {
 	position: absolute;
+	
 }
 .wrapper.open-menu .navigation-bar {
 	position: absolute;
