@@ -14,7 +14,7 @@ $(document).on("loadLayout", function() {
 				var code = parseFloat(value.code);
 				if(code === 200) {
 					location.replace(location.href);
-					alert("등록되었습니다.");
+					alert("등록되었습니다. ^^");
 					return;
 				} else if(code === 500) {
 					alert("로그인을 해주세요.");
