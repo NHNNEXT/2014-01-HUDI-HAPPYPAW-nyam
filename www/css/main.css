@@ -128,7 +128,7 @@ body {
 	1left: 250px;
 	transform: translateX(250px);
 	-webkit-transform: translateX(250px);
-	position: absolute;
+	position: fixed;
 }
 .wrapper.open-menu .sliding-menu {
 	position: absolute;
