@@ -37,6 +37,7 @@ body {
 	height: 64px;
 	width: 100%;
 	top:0;
+	left:0;
 	position: fixed;
 	background: #E97248;
 	
@@ -89,14 +90,14 @@ body {
 	font-size: 1.3em;
 }
 .sliding-menu {
-	position: absolute;
+	position: fixed;
 	left:-250px;
 	width: 250px;
 	height: 100%;
 	top:0;
 	background: #333;
 	z-index: 2;
-	-webkit-transition:left ease 0.5s;
+/* 	-webkit-transition:left ease 0.5s; */
 	overflow: auto;
 }
 
@@ -130,7 +131,8 @@ body {
 	position: absolute;
 }
 .wrapper.open-menu .sliding-menu {
-/* 	position: absolute; */
+	position: absolute;
+	left:-250px;
 	
 }
 .wrapper.open-menu .navigation-bar {
