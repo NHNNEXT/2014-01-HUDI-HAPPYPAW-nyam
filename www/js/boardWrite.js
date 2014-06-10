@@ -13,6 +13,7 @@ $(document).on("loadLayout", function() {
 	$(".submit").click(function(e) {
 		e.preventDefault();
 		var data = {title:$('[name="title"]').val(), content:$('[name="content"]').val()};
+		alert(data.content);
 		$.ajax(pageInfo.domain + "m/requestBoard/write", {data:data, method:"POST", type:"json"}).done(function(value) {
 			if(!value.hasOwnProperty("code")) {
 
