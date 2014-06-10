@@ -7,6 +7,7 @@ body {
 /* 	position: fixed; */
 	position: relative;
 	left:0px;
+	transform: translateX(0px);
 	width: 100%;
 	transition:all ease 0.5s;
 	-webkit-transition:all ease 0.5s;
@@ -124,6 +125,7 @@ body {
 
 .wrapper.open-menu {
 	1left: 250px;
+	transform: translateX(250px);
 	-webkit-transform: translateX(250px);
 	position: absolute;
 }
