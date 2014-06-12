@@ -8,6 +8,15 @@ $(document).on("loginComplete", function() {
 		console.log(list, req);
 		JSON.parse(req.responseText);
 		daylight.each(list, function(e, index) {this.num =index + 1;});
+		
+		list.imageDisplay = "none";
+		if(list.filename) {
+			list.filename = pageInfo.domain+"../images/" + list.filename;
+			list["img-src"] = "src";
+			list.imageDisplay = "block";
+		}
+		
+		
 		$(".table").template(list, $(".table"));
 		
 		
