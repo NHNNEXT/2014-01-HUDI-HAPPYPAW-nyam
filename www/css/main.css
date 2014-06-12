@@ -3,6 +3,9 @@ body {
 	font-family: sans-serif;
 	overflow-x:hidden;
 }
+.box {
+	
+}
 .wrapper {
 /* 	position: fixed; */
 	position: relative;
@@ -17,7 +20,7 @@ body {
 .container {
 	position: relative;
 	-webkit-transition:all ease 0.5s;
-	padding-top:64px;
+	padding-top:24px;
 }
 .contents, .content {
 	outline:none;
