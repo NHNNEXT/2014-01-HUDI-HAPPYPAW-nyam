@@ -34,6 +34,16 @@ $(document).on("loadLayout", function() {
 				alert("성공");
 				window.location.replace("boardList.html");
 				break;
+			case -300:
+				alert("제목을 입력해주세요.");
+				return;
+			case -400:
+				alert("내용을 입력해주세요.");
+				return;
+			case -500:
+				alert("로그인을 해주세요.");
+				goLoginPage();
+				return;
 			}
 		
 		

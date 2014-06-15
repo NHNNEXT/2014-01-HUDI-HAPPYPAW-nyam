@@ -2,13 +2,15 @@
 function logout() {
 	daylight.ajax("http://125.209.200.26/nyam/app/m_logout", {method:"POST"}).done(function(value){
 		alert("로그아웃되었습니다.");
-		window.location.replace("login.html");
+		goLoginPage();
 	}).fail(function(request){
 		alert("logout fail" + request.status);
 	});
 };
 
-
+function goLoginPage() {
+	window.location.replace("login.html");
+}
 function loginCheck(id, password) {
 	$.ajax(pageInfo.domain + "/m_login_check", {data:{id:id, password:password}, method:"POST", type:"json"}).done(function(value, req) {
 		if(value.hasOwnProperty("code")){
